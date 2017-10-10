@@ -1,0 +1,49 @@
+var xpos = 0;
+var xspeed = 5;
+
+var ypos = 0;
+var yspeed = 5;
+
+function setup() {
+    createCanvas(windowWidth,windowHeight);
+		c = color(0,255,0);
+		c1 = color(255,255,0);
+}
+
+
+function draw (){
+   background('rgb(200,10,150)');
+    fill(c);
+    
+    ellipse (xpos, ypos, 200, 70);
+	//first two numbers are location, second two are size
+	   	line (0, ypos, windowWidth, ypos);
+			line (xpos, 0, xpos, windowHeight);
+		fill(c1);
+			ellipse (xpos, ypos, 100, 35);
+	
+		if(xpos >= width || xpos < 0) {
+			xspeed = -1 * xspeed;
+		}
+	
+		if(ypos >= height || ypos < 0) {
+			yspeed = -1 * yspeed;
+		}
+
+
+		xpos= xpos + xspeed;
+		ypos = ypos + yspeed;
+}
+
+
+
+function mousePressed(){
+		c1= color(234,0,34);
+	delay = 1000
+		c = color(255,255,0);
+}
+
+function mouseReleased(){
+		c = color(0, 250,0);
+		c1= color(255,255,0);
+}
